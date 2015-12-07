@@ -70,18 +70,21 @@ x = new Question( "Mucosal Thickening",
 
 x.addDependent( new Question( "Right",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "Mild right and" },
-		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right and" },
-		{ val: "2", text: "Severe (>75%)", report: "Severe left and" },
+		{ val: "0", text: "Mild (<25%)", report: "Mild right frontal sinus mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right frontal sinus mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe right frontal sinus mucosal thickening." },
 	], "radio" ), "1" );
 
 x.addDependent( new Question( "Left",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "mild left frontal sinus mucosal thickening." },
-		{ val: "1", text: "Moderate (26-75%)", report: "moderate left frontal sinus mucosal thickening." },
-		{ val: "2", text: "Severe (>75%)", report: "severe left frontal sinus mucosal thickening." },
+		{ val: "0", text: "Mild (<25%)", report: "Mild left frontal sinus mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate left frontal sinus mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe left frontal sinus mucosal thickening." },
 	], "radio" ), "1" );
 
+M.addQuestion( x );
+
+x = new Question( "Frontal Recess Obstruction", "The frontal recess is obstructed " );
 M.addQuestion( x );
 
 x = new Question( "Osteitis", MODULE_NOYES, "radio" );
@@ -90,9 +93,6 @@ M.addQuestion( x );
 
 x = new Question( "Dehiscence/Erosion", MODULE_NOYES, "radio" );
 x.addDependent( new Question( "Location/Extent", "The frontal sinus is dehiscent ^.", "text" ), "1" );
-M.addQuestion( x );
-
-x = new Question( "Frontal Recess Obstruction", "The frontal recess is obstructed " );
 M.addQuestion( x );
 
 x = new Question( "Frontoethmoidal Cells", MODULE_NOYES, "radio" );
@@ -150,24 +150,18 @@ x = new Question( "Mucosal Thickening",
 
 x.addDependent( new Question( "Right",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "Mild right and" },
-		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right and" },
-		{ val: "2", text: "Severe (>75%)", report: "Severe left and" },
+		{ val: "0", text: "Mild (<25%)", report: "Mild right anterior ethmoid mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right anterior ethmoid mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe right anterior ethmoid mucosal thickening." },
 	], "radio" ), "1" );
 
 x.addDependent( new Question( "Left",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "mild left anterior ethmoid mucosal thickening." },
-		{ val: "1", text: "Moderate (26-75%)", report: "moderate left anterior ethmoid mucosal thickening." },
-		{ val: "2", text: "Severe (>75%)", report: "severe left anterior ethmoid mucosal thickening." },
+		{ val: "0", text: "Mild (<25%)", report: "Mild left anterior ethmoid mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate left anterior ethmoid mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe left anterior ethmoid mucosal thickening." },
 	], "radio" ), "1" );
 
-M.addQuestion( x );
-
-x = new Question( "Agger Nasi Cell", "Agger nasi cell present " );
-M.addQuestion( x );
-
-x = new Question( "Olfactory Cleft Opacified", "The olfactory cleft is opacified " );
 M.addQuestion( x );
 
 x = new Question( "Osteitis", MODULE_NOYES, "radio" );
@@ -176,6 +170,12 @@ M.addQuestion( x );
 
 x = new Question( "Bone Erosions", MODULE_NOYES, "radio" );
 x.addDependent( new Question( "Description", "Bony erosive changes involving the anterior ethmoids ^.", "text" ), "1" );
+M.addQuestion( x );
+
+x = new Question( "Agger Nasi Cell", "Agger nasi cell present " );
+M.addQuestion( x );
+
+x = new Question( "Olfactory Cleft Opacified", "The olfactory cleft is opacified " );
 M.addQuestion( x );
 
 M.addQuestion( new Question( "Other", "", "text" ) );
@@ -277,21 +277,18 @@ x = new Question( "Mucosal Thickening",
 
 x.addDependent( new Question( "Right",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "Mild right and" },
-		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right and" },
-		{ val: "2", text: "Severe (>75%)", report: "Severe left and" },
+		{ val: "0", text: "Mild (<25%)", report: "Mild right maxillary mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right maxillary mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe right maxillary mucosal thickening." },
 	], "radio" ), "1" );
 
 x.addDependent( new Question( "Left",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "mild left maxillary mucosal thickening." },
-		{ val: "1", text: "Moderate (26-75%)", report: "moderate left maxillary mucosal thickening." },
-		{ val: "2", text: "Severe (>75%)", report: "severe left maxillary mucosal thickening." },
+		{ val: "0", text: "Mild (<25%)", report: "Mild left maxillary mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate left maxillary mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe left maxillary mucosal thickening." },
 	], "radio" ), "1" );
 
-M.addQuestion( x );
-
-x = new Question( "Accessory Ostia", "Accessory ostium present " );
 M.addQuestion( x );
 
 x = new Question( "Osteitis", MODULE_NOYES, "radio" );
@@ -300,6 +297,9 @@ M.addQuestion( x );
 
 x = new Question( "Bone Erosions", MODULE_NOYES, "radio" );
 x.addDependent( new Question( "Description", "Bony erosive changes involving the maxillary sinus ^.", "text" ), "1" );
+M.addQuestion( x );
+
+x = new Question( "Accessory Ostia", "Accessory ostium present " );
 M.addQuestion( x );
 
 x = new Question( "Orbital Floor Abnormality", MODULE_NOYES, "radio" );
@@ -337,16 +337,16 @@ x = new Question( "Mucosal Thickening",
 
 x.addDependent( new Question( "Right",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "Mild right and" },
-		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right and" },
-		{ val: "2", text: "Severe (>75%)", report: "Severe left and" },
+		{ val: "0", text: "Mild (<25%)", report: "Mild right posterior ethmoid mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right posterior ethmoid mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe right posterior ethmoid mucosal thickening." },
 	], "radio" ), "1" );
 
 x.addDependent( new Question( "Left",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "mild left posterior ethmoid mucosal thickening." },
-		{ val: "1", text: "Moderate (26-75%)", report: "moderate left posterior ethmoid mucosal thickening." },
-		{ val: "2", text: "Severe (>75%)", report: "severe left posterior ethmoid mucosal thickening." },
+		{ val: "0", text: "Mild (<25%)", report: "Mild left posterior ethmoid mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate left posterior ethmoid mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe left posterior ethmoid mucosal thickening." },
 	], "radio" ), "1" );
 
 M.addQuestion( x );
@@ -382,25 +382,18 @@ x = new Question( "Mucosal Thickening",
 
 x.addDependent( new Question( "Right",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "Mild right and" },
-		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right and" },
-		{ val: "2", text: "Severe (>75%)", report: "Severe left and" },
+		{ val: "0", text: "Mild (<25%)", report: "Mild right sphenoid mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate right sphenoid mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe right sphenoid mucosal thickening." },
 	], "radio" ), "1" );
 
 x.addDependent( new Question( "Left",
 	[
-		{ val: "0", text: "Mild (<25%)", report: "mild left sphenoid mucosal thickening." },
-		{ val: "1", text: "Moderate (26-75%)", report: "moderate left sphenoid mucosal thickening." },
-		{ val: "2", text: "Severe (>75%)", report: "severe left sphenoid mucosal thickening." },
+		{ val: "0", text: "Mild (<25%)", report: "Mild left sphenoid mucosal thickening." },
+		{ val: "1", text: "Moderate (26-75%)", report: "Moderate left sphenoid mucosal thickening." },
+		{ val: "2", text: "Severe (>75%)", report: "Severe left sphenoid mucosal thickening." },
 	], "radio" ), "1" );
 
-M.addQuestion( x );
-
-x = new Question( "Sella Turcica/Pituitary Fossa",
-	[
-		{ val: "0", text: "Normal", checked: true },
-		{ val: "1", text: "Enlarged", report: "The sella is enlarged." }
-	], "radio" );
 M.addQuestion( x );
 
 x = new Question( "Osteitis", MODULE_NOYES, "radio" );
@@ -409,6 +402,13 @@ M.addQuestion( x );
 
 x = new Question( "Bone Erosions", MODULE_NOYES, "radio" );
 x.addDependent( new Question( "Description", "Bony erosive changes involving the sphenoid sinus ^.", "text" ), "1" );
+M.addQuestion( x );
+
+x = new Question( "Sella Turcica/Pituitary Fossa",
+	[
+		{ val: "0", text: "Normal", checked: true },
+		{ val: "1", text: "Enlarged", report: "The sella is enlarged." }
+	], "radio" );
 M.addQuestion( x );
 
 M.addQuestion( new Question( "Other", "", "text" ) );
@@ -440,9 +440,55 @@ function filterReport( x )
 	
 	x = x.replace( normal, "No evidence of mucoperiosteal thickening or air-fluid levels. Patent ostiomeatal channels bilaterally, anterior and posteriorly.\n\nUnremarkable bony morphology." );
 	
-	x = x.replace( "Mild right and mild left", "Mild bilateral" );
-	x = x.replace( "Moderate right and moderate left", "Moderate bilateral" );
-	x = x.replace( "Severe right and severe left", "Severe bilateral" );
+	x = x.replace( "Mild right frontal sinus mucosal thickening. Mild left", "Mild bilateral" );
+	x = x.replace( "Mild right frontal sinus mucosal thickening. Moderate left", "Moderate left and mild right" );
+	x = x.replace( "Mild right frontal sinus mucosal thickening. Severe left", "Severe left and mild right" );
+	x = x.replace( "Moderate right frontal sinus mucosal thickening. Mild left", "Moderate right and mild left" );
+	x = x.replace( "Moderate right frontal sinus mucosal thickening. Moderate left", "Moderate bilateral" );
+	x = x.replace( "Moderate right frontal sinus mucosal thickening. Severe left", "Severe left and moderate right" );
+	x = x.replace( "Severe right frontal sinus mucosal thickening. Mild left", "Severe right and mild left" );
+	x = x.replace( "Severe right frontal sinus mucosal thickening. Moderate left", "Severe right and moderate left" );
+	x = x.replace( "Severe right frontal sinus mucosal thickening. Severe left", "Severe bilateral" );
+	
+	x = x.replace( "Mild right anterior ethmoid mucosal thickening. Mild left", "Mild bilateral" );
+	x = x.replace( "Mild right anterior ethmoid mucosal thickening. Moderate left", "Moderate left and mild right" );
+	x = x.replace( "Mild right anterior ethmoid mucosal thickening. Severe left", "Severe left and mild right" );
+	x = x.replace( "Moderate right anterior ethmoid mucosal thickening. Mild left", "Moderate right and mild left" );
+	x = x.replace( "Moderate right anterior ethmoid mucosal thickening. Moderate left", "Moderate bilateral" );
+	x = x.replace( "Moderate right anterior ethmoid mucosal thickening. Severe left", "Severe left and moderate right" );
+	x = x.replace( "Severe right anterior ethmoid mucosal thickening. Mild left", "Severe right and mild left" );
+	x = x.replace( "Severe right anterior ethmoid mucosal thickening. Moderate left", "Severe right and moderate left" );
+	x = x.replace( "Severe right anterior ethmoid mucosal thickening. Severe left", "Severe bilateral" );
+	
+	x = x.replace( "Mild right maxillary mucosal thickening. Mild left", "Mild bilateral" );
+	x = x.replace( "Mild right maxillary mucosal thickening. Moderate left", "Moderate left and mild right" );
+	x = x.replace( "Mild right maxillary mucosal thickening. Severe left", "Severe left and mild right" );
+	x = x.replace( "Moderate right maxillary mucosal thickening. Mild left", "Moderate right and mild left" );
+	x = x.replace( "Moderate right maxillary mucosal thickening. Moderate left", "Moderate bilateral" );
+	x = x.replace( "Moderate right maxillary mucosal thickening. Severe left", "Severe left and moderate right" );
+	x = x.replace( "Severe right maxillary mucosal thickening. Mild left", "Severe right and mild left" );
+	x = x.replace( "Severe right maxillary mucosal thickening. Moderate left", "Severe right and moderate left" );
+	x = x.replace( "Severe right maxillary mucosal thickening. Severe left", "Severe bilateral" );
+	
+	x = x.replace( "Mild right posterior ethmoid mucosal thickening. Mild left", "Mild bilateral" );
+	x = x.replace( "Mild right posterior ethmoid mucosal thickening. Moderate left", "Moderate left and mild right" );
+	x = x.replace( "Mild right posterior ethmoid mucosal thickening. Severe left", "Severe left and mild right" );
+	x = x.replace( "Moderate right posterior ethmoid mucosal thickening. Mild left", "Moderate right and mild left" );
+	x = x.replace( "Moderate right posterior ethmoid mucosal thickening. Moderate left", "Moderate bilateral" );
+	x = x.replace( "Moderate right posterior ethmoid mucosal thickening. Severe left", "Severe left and moderate right" );
+	x = x.replace( "Severe right posterior ethmoid mucosal thickening. Mild left", "Severe right and mild left" );
+	x = x.replace( "Severe right posterior ethmoid mucosal thickening. Moderate left", "Severe right and moderate left" );
+	x = x.replace( "Severe right posterior ethmoid mucosal thickening. Severe left", "Severe bilateral" );
+	
+	x = x.replace( "Mild right sphenoid mucosal thickening. Mild left", "Mild bilateral" );
+	x = x.replace( "Mild right sphenoid mucosal thickening. Moderate left", "Moderate left and mild right" );
+	x = x.replace( "Mild right sphenoid mucosal thickening. Severe left", "Severe left and mild right" );
+	x = x.replace( "Moderate right sphenoid mucosal thickening. Mild left", "Moderate right and mild left" );
+	x = x.replace( "Moderate right sphenoid mucosal thickening. Moderate left", "Moderate bilateral" );
+	x = x.replace( "Moderate right sphenoid mucosal thickening. Severe left", "Severe left and moderate right" );
+	x = x.replace( "Severe right sphenoid mucosal thickening. Mild left", "Severe right and mild left" );
+	x = x.replace( "Severe right sphenoid mucosal thickening. Moderate left", "Severe right and moderate left" );
+	x = x.replace( "Severe right sphenoid mucosal thickening. Severe left", "Severe bilateral" );
 	
 	return x;
 }
