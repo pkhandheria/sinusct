@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		
+        <title>FESS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="lib/colorbox.css" />
+		<link rel="stylesheet" href="lib/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="main.css">
+
+        <script type="text/javascript" src="lib/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="lib/ICanHaz.min.js"></script>
+		<script type="text/javascript" src="lib/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/ZeroClipboard.min.js"></script>
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<script type="text/javascript" src="modules.js"></script>
+		<script type="text/javascript" src="template.js"></script>
+		
+        <script id="makeQuestion" type="text/html">
+		<div>
+		<div class="header"><span>{{header}}</span></div>
+		{{#choices}}
+		<label class="{{type}}-inline"><input type="{{type}}" name="{{name}}" value="{{val}}" {{#checked}}checked {{/checked}}/>{{text}}</label>
+		{{/choices}}
+		{{^choices}}
+		<label class="checkbox-inline"><input type="checkbox" name="{{name}}" value="R" />R</label>
+		<label class="checkbox-inline"><input type="checkbox" name="{{name}}" value="L" />L</label>
+		{{/choices}}
+		</div>
+		</script>
+		
+		<script id="makeText" type="text/html">
+		<div>
+		<div class="header"><span>{{header}}</span></div>
+		{{#choices}}
+		<label>{{text}}&nbsp;<input class="input-sm" type="text" name="{{name}}[]" value="" {{#small}}size=4 {{/small}}{{#tooltip}}rel="tooltip" title="{{tooltip}}" {{/tooltip}}/></label>
+		{{/choices}}
+		</div>
+		</script>
+		
+        <script type="text/javascript">
+        $(document).ready( function() {
+				
+			$.each( modules, function (i,j) {
+			
+				$("#main").append( j.generateDiv() );
+
+			});
+			
+			var max = 0;
+			$(".header").each(function(){
+				if ($(this).width() > max)
+					max = $(this).width();    
+			});
+			$(".header").width(max+20);
+			
+			$.each( modules, function (i,j) {
+				j.attachListeners();
+			});
+					
+			$( "input" ).change( function() { generateReport(); } );
+			$( "input[type=text]" ).keyup( function() { generateReport(); } );
+			generateReport();
+			
+			for ( i = 0; i < images.length; i++ )
+			{
+				var elem = $( ".header span:contains(\"" + images[i] + "\")" );			
+				elem = elem.filter( function() { return $(this).text() == images[i]; } );		// make sure it matches exactly
+				
+				if ( elem.length > 0 )
+				{
+					elem.colorbox( { href: "img/" + images[i].toLowerCase().replace(/\s/g,'') + ".png" } );
+					elem.addClass( "annotation" );
+				}
+			}
+			
+			$(".inline_a").colorbox( { inline: true, width:"50%" } );
+			
+			$("[rel=tooltip]").tooltip({ placement: 'right', html: true });
+			
+			var client = new ZeroClipboard( $("#copy-button") );
+			client.on( "copy", function (event) {
+				var clipboard = event.clipboardData;
+				clipboard.setData( "text/plain", $( "#report" ).text() );
+			});
+				
+        });
+        </script>
+	
+	</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Sinus CT Template Engine</a>
+        </div>
+		
+		<div id="navbar" class="navbar-collapse collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a class="inline_a" href="#about">About</a></li>
+			<li><a class="inline_a" href="#contact">Contact</a></li>
+		</ul>
+		
+		</div>
+	</div>
+</nav>
+
+
+<div class="container">
+	<div class="row">
+		<div id="main" class="col-md-8 col-sm-6">
+		</div>
+	
+		<div id="reportdiv" class="col-md-4 col-sm-6">
+			<div class="clearfix"><div class="pull-left"><h4>Report:</h4></div><div class="pull-right"><button type="button" id="copy-button" class="btn btn-default btn-md"><span class="fa fa-clipboard" aria-hidden="true"></span> Copy</button></div></div>
+			<pre id="report"></pre>
+		</div>
+	</div>
+</div>
+
+<div class="inline">
+	<div id="about" style="padding:10px; background:#fff;">
+		<h2>About</h2>
+		<h4>This sinus CT template engine is developed by a team at the Division of Neuroradiology, Department of Radiology, Johns Hopkins Hospital.</h4>
+	</div>
+</div>
+
+<div class="inline">
+	<div id="contact" style="padding:10px; background:#fff;">
+		<h2>Contact</h2>
+		<h4>Questions or comments should be addressed to <a href="mailto:sjzinreich@jhmi.edu">sjzinreich@jhmi.edu</a>.</h4>
+	</div>
+</div>
+
+</body>
+
+</html>

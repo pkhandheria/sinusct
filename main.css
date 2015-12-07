@@ -1,0 +1,67 @@
+#reportdiv
+{
+	height: 600px;
+}
+		
+pre
+{
+	white-space: pre-wrap;
+	word-break: normal;
+	height: 100%;
+}
+	
+.dependent
+{
+	padding-left: 20px;
+}
+		
+.module
+{
+	padding-bottom: 10px;
+}
+		
+.header
+{
+	float: left;
+}
+		
+.header span:after
+{
+	content: ':';
+}
+		
+.annotation:hover
+{
+	cursor: pointer;
+	cursor: hand;
+	border-bottom: 1px dotted;
+}
+		
+.annotation:before
+{
+	font-family: FontAwesome;
+	content: '\f059  ';
+}
+		
+.title:hover
+{
+	cursor: pointer;
+	cursor: hand;
+	text-decoration: underline;
+}
+
+.title span
+{
+	font-weight: bold;
+	padding-left: 5px;
+}
+		
+.title:after
+{
+	content: ':';
+}
+		
+.inline
+{
+	display: none;
+}
